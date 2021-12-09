@@ -1,16 +1,17 @@
 // IMPORT MODULES under test here:
+import { renderMushroom } from "../render-utils";
 // import { example } from '../example.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('this test should return the div class of renderMushroom, which is "renderMushroom"', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = true;
+    const expected = '<div class="mushroom"></div>';
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = renderMushroom().outerHTML;
 
     //Expect
     // Make assertions about what is expected versus the actual result
