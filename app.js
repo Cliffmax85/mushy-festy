@@ -33,12 +33,17 @@ const friendData = [
 
 addFriendButton.addEventListener('click', () => {
     // get the name from the input
-    const friendName = friendInputEl.textContent;
+    const friendName = friendInputEl.value;
     // create a new friend object
     const friendObj = {
         name: friendName,
         satisfaction: Math.ceil(Math.random() * 3)
     };
+    if (friendObj.name === '') {
+        const randomNameArray = ['George', 'Sam', 'Jeff', 'Clark'];
+        const index = Math.floor(Math.random() * 3);
+        friendObj.name = randomNameArray[index];
+    }
     // push it into the friends state array, passed in as an argument
     friendData.push(friendObj);
     // reset the input
